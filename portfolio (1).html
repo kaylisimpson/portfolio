@@ -1,0 +1,802 @@
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║                     PORTFOLIO STYLE GUIDE                        ║
+║            Edit these values to customise your site              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. COLORS  (find in :root block inside <style>)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  --black   #0a0a0a   → Page background. Try #0d0d0d (softer) or #000000 (pure black)
+  --white   #f5f2ed   → All text. Try #ffffff (crisp) or #e8e6e1 (warmer)
+  --accent  #e8521a   → YOUR BRAND COLOR. Swap this one hex to repaint the whole site.
+                        Try: #2563eb (electric blue) · #16a34a (forest green)
+                             #9333ea (violet) · #dc2626 (red) · #ca8a04 (gold)
+  --mid     #1c1c1c   → Card/hover backgrounds. Keep dark, close to --black
+  --muted   #6b6560   → Subtle labels and footer text. Lighten if too dark.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. FONTS  (find the Google Fonts <link> below)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Headline font  → Fraunces (serif, editorial feel)
+    Swap ideas   → Playfair Display · Cormorant Garamond · DM Serif Display
+  Body font      → DM Sans (clean, neutral)
+    Swap ideas   → Inter · Outfit · Syne
+
+  To swap fonts:
+    Step 1 — Go to fonts.google.com, pick your font, copy the <link> tag
+    Step 2 — Replace the <link> tag just below this comment block
+    Step 3 — In :root, update --serif or --sans to your new font name
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. YOUR DETAILS  (find in the <body> section)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Name            → Search "Alex Rivera" — replace all 3 instances with your name
+  Page title      → Search "Portfolio — Bold & Confident" — update to your name
+  Hero headline   → Search "I make things" — rewrite the 3-line statement
+  Hero tagline    → Search "Creative · Strategy · Marketing" — your disciplines
+  Hero bio        → Search "Multidisciplinary creative" — 2 sentence personal intro
+  Contact email   → Search "hello@alexrivera.com" — your actual email
+  Social links    → Search "LinkedIn" in the footer — update the href="#" links
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. PROJECTS  (4 rows in the Work section)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Each project has 3 parts to update:
+    project-discipline  → e.g. "Brand Strategy · Design"
+    project-title       → 2-line headline describing what you did
+    project-outcome     → The result. Lead with a number if you can.
+
+  To ADD a project row — copy everything between:
+    <a href="#" class="project reveal"> ... </a>
+  and paste it above the closing </div> of work-grid. Update the number (05 etc.)
+
+  To REMOVE a project — delete the entire <a href="#" class="project reveal"> block.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. STATS  (About section — 4 numbers)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Search "stat-num" to find each number block.
+  Update the number and the label below it (stat-label).
+  The <sup> tag adds the small symbol after the number (e.g. + or ×)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. ANIMATIONS  (tweak speed/style)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Scroll reveal speed   → Search "transition: opacity 0.8s" — change 0.8s to taste
+  Scroll reveal delay   → Search "i * 80" in the <script> — lower = faster stagger
+  Hero text fade        → Search "animation: fadeUp" — change delay values (0.2s, 0.4s etc.)
+  Hover slide speed     → Search "transition: width 0.5s" — controls project row hover
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7. DEPLOYING UPDATES TO VERCEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Save this file after edits
+  2. Go to vercel.com → your project dashboard
+  3. Drag and drop the updated file onto the page
+  4. Hit Deploy — live in ~30 seconds
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Bold & Confident</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f2ed;
+    --accent: #e8521a;
+    --mid: #1c1c1c;
+    --muted: #6b6560;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+    mix-blend-mode: normal;
+  }
+  .cursor.expanded { width: 48px; height: 48px; background: transparent; border: 1.5px solid var(--accent); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 48px;
+    mix-blend-mode: difference;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-number {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: 40vw;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.04);
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 9vw, 9rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.7s forwards;
+  }
+
+  .hero-desc {
+    max-width: 360px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(245,242,237,0.6);
+  }
+
+  .hero-cta {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    transition: gap 0.3s ease;
+  }
+  .hero-cta:hover { gap: 28px; }
+  .cta-line {
+    width: 48px; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .hero-cta:hover .cta-line { width: 72px; }
+
+  /* DISCIPLINE TAGS */
+  .disciplines {
+    display: flex; gap: 12px;
+    margin-top: 32px;
+    padding: 0 48px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.9s forwards;
+  }
+  .tag {
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,242,237,0.5);
+    transition: all 0.3s;
+  }
+  .tag:hover, .tag.active {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 60px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* WORK SECTION */
+  .work {
+    padding: 120px 48px;
+  }
+
+  .work-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 48px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transition: padding 0.4s ease;
+    cursor: none;
+  }
+
+  .project::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--mid);
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+  }
+
+  .project:hover::before { width: 100%; }
+  .project:hover { padding-left: 32px; }
+
+  .project > * { position: relative; z-index: 1; }
+
+  .project-num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .project-info { flex: 1; }
+
+  .project-discipline {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 0.3s;
+  }
+
+  .project-outcome {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: rgba(245,242,237,0.4);
+    transition: color 0.3s;
+  }
+
+  .project:hover .project-outcome { color: rgba(245,242,237,0.7); }
+
+  .project-arrow {
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: all 0.3s ease;
+    color: var(--accent);
+  }
+  .project:hover .project-arrow { opacity: 1; transform: translateX(0); }
+
+  /* ABOUT SECTION */
+  .about {
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .about-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .about-headline span {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .about-right {}
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(245,242,237,0.65);
+    margin-bottom: 48px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .stat-num sup {
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 120px 48px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 80px;
+  }
+
+  .process-card {
+    padding: 48px 40px;
+    background: var(--mid);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+  }
+
+  .process-card:hover { background: #242424; }
+
+  .process-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .process-card:hover::after { transform: scaleX(1); }
+
+  .process-step {
+    font-family: var(--serif);
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .process-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .process-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(245,242,237,0.5);
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    padding: 120px 48px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,82,26,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+
+  .cta-headline {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 48px;
+  }
+
+  .cta-headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center; gap: 16px;
+    padding: 20px 40px;
+    background: var(--accent);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cta-btn:hover::before { transform: translateX(0); }
+  .cta-btn:hover { color: var(--accent); }
+  .cta-btn span { position: relative; z-index: 1; }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 48px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .footer-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Alex Rivera</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-number">R</div>
+  <p class="hero-eyebrow">Creative · Strategy · Marketing</p>
+  <h1 class="hero-headline">
+    I make things<br>
+    look right, <em>land</em><br>
+    right, think right.
+  </h1>
+  <div class="hero-sub">
+    <p class="hero-desc">
+      Multidisciplinary creative with 8+ years shaping brands, campaigns, and strategy across industries — from FMCG to fintech to culture.
+    </p>
+    <a href="#work" class="hero-cta">
+      <span class="cta-line"></span>
+      See the work
+    </a>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<div class="disciplines">
+  <span class="tag active">All Work</span>
+  <span class="tag">Design / Creative</span>
+  <span class="tag">Marketing</span>
+  <span class="tag">Strategy</span>
+</div>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="section-label reveal">Selected Projects</div>
+
+  <div class="work-grid">
+
+    <a href="#" class="project reveal">
+      <span class="project-num">01</span>
+      <div class="project-info">
+        <p class="project-discipline">Brand Strategy · Design</p>
+        <h2 class="project-title">Rebranding a fintech startup<br>from invisible to inevitable</h2>
+        <p class="project-outcome">User trust scores up 62% in 90 days</p>
+      </div>
+      <span class="project-arrow">→</span>
+    </a>
+
+    <a href="#" class="project reveal">
+      <span class="project-num">02</span>
+      <div class="project-info">
+        <p class="project-discipline">Marketing · Content</p>
+        <h2 class="project-title">Campaign that turned a product<br>launch into a cultural moment</h2>
+        <p class="project-outcome">14M organic impressions · Zero paid spend</p>
+      </div>
+      <span class="project-arrow">→</span>
+    </a>
+
+    <a href="#" class="project reveal">
+      <span class="project-num">03</span>
+      <div class="project-info">
+        <p class="project-discipline">Strategy · Consulting</p>
+        <h2 class="project-title">Go-to-market strategy for a<br>category that didn't exist yet</h2>
+        <p class="project-outcome">Series A secured · R42M raised</p>
+      </div>
+      <span class="project-arrow">→</span>
+    </a>
+
+    <a href="#" class="project reveal">
+      <span class="project-num">04</span>
+      <div class="project-info">
+        <p class="project-discipline">Design · Creative</p>
+        <h2 class="project-title">Visual identity system built to<br>scale across 11 markets</h2>
+        <p class="project-outcome">Deployed in 6 weeks flat</p>
+      </div>
+      <span class="project-arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="reveal">
+    <h2 class="about-headline">
+      Talent built<br>
+      <span>in constraints.</span>
+    </h2>
+  </div>
+  <div class="about-right reveal">
+    <p class="about-text">
+      Most of my career has been in rooms where the brief was impossible, the timeline was brutal, and the stakes were real. That's where I do my best work — finding the sharp, unexpected answer when safe isn't an option.<br><br>
+      I don't have a single industry. I have a single standard.
+    </p>
+    <div class="stats">
+      <div>
+        <div class="stat-num">8<sup>+</sup></div>
+        <div class="stat-label">Years Active</div>
+      </div>
+      <div>
+        <div class="stat-num">40<sup>+</sup></div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div>
+        <div class="stat-num">12</div>
+        <div class="stat-label">Industries Spanned</div>
+      </div>
+      <div>
+        <div class="stat-num">3<sup>×</sup></div>
+        <div class="stat-label">Avg. ROI Delivered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-label reveal">How I Work</div>
+  <div class="process-grid">
+    <div class="process-card reveal">
+      <div class="process-step">01</div>
+      <h3 class="process-title">Diagnose, don't assume</h3>
+      <p class="process-desc">Every brief hides the real problem. I dig until I find what's actually broken — then we fix that, not the symptom.</p>
+    </div>
+    <div class="process-card reveal">
+      <div class="process-step">02</div>
+      <h3 class="process-title">Make it land on impact</h3>
+      <p class="process-desc">Creative work earns attention. Strategy work earns trust. I build both in the same breath — nothing gets made that doesn't move something.</p>
+    </div>
+    <div class="process-card reveal">
+      <div class="process-step">03</div>
+      <h3 class="process-title">Deliver, then measure</h3>
+      <p class="process-desc">Great work doesn't end at handoff. I track what lands, learn from what doesn't, and iterate until the numbers say it worked.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <p class="cta-label reveal">Open to Projects</p>
+  <h2 class="cta-headline reveal">
+    Got something<br>
+    <em>worth making?</em>
+  </h2>
+  <a href="/cdn-cgi/l/email-protection#99f1fcf5f5f6d9f8f5fce1ebf0effcebf8b7faf6f4" class="cta-btn reveal">
+    <span>Let's talk →</span>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Alex Rivera</div>
+  <ul class="footer-links">
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">Dribbble</a></li>
+    <li><a href="#">Instagram</a></li>
+  </ul>
+  <p class="footer-copy">© 2026</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, .project, .tag').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('expanded'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('expanded'));
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Filter tags
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach(tag => {
+    tag.addEventListe
